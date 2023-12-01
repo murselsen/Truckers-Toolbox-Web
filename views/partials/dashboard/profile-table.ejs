@@ -1,0 +1,88 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">
+
+      Profile List <i class="material-icons opacity-10">group</i>
+      <p class="text-sm mt-2">
+        <i class="material-icons opacity-10 text-primary">check</i>
+        <span class="font-weight-bold ms-1">
+          <%= application.config.app_profiles.count %>
+        </span> profiles listed
+        <i class="material-icons opacity-10 text-primary ms-3">close</i> not descrypt
+      </p>
+    </h4>
+  </div>
+  <div class="card body">
+    <div class="table-responsive">
+      <table class="table align-items-center mb-0">
+        <thead>
+          <tr>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+              Name
+            </th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+              Path
+            </th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+              Encryption Status
+            </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% application.config.app_profiles.data.forEach(profile=> { %>
+
+            <tr>
+              <td>
+                <div class=" d-flex px-2">
+                  <div>
+                    <i class="material-icons opacity-10 ms-2 me-3">local_shipping</i>
+                  </div>
+                  <div class="my-auto">
+                    <h6 class="mb-0 text-xs">
+                      <%= profile.name %>
+                    </h6>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p class="text-xs font-weight-normal mb-0">
+                  <%= profile.path %>
+                </p>
+              </td>
+              <td>
+                <div class="d-flex px-2">
+
+                  <div class="my-auto">
+                    <h6 class="mb-0 text-dark text-xs">Encrypted - Decrypted</h6>
+                  </div>
+                </div>
+
+              </td>
+              <td class="align-middle text-center">
+                <div class="d-flex align-items-center">
+                  <div class="progress-wrapper w-75 mx-auto">
+                    <div class="progress-info">
+                      <div class="progress-percentage">
+                        <span class="text-xs font-weight-bold">60%</span>
+                      </div>
+                    </div>
+                    <div class="progress">
+                      <div class="progress-bar bg-gradient-danger w-20" role="progressbar" aria-valuenow="60"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+
+              <td class="align-middle">
+              </td>
+            </tr>
+            <% }); %>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

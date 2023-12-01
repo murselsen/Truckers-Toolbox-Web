@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-lg-3 col-6 text-center">
+        <div class="border border-light border-1 border-radius-md py-3">
+            <h6 class="text-primary text-gradient mb-0">Profile</h6>
+            <h4 class="font-weight-bolder">
+                <span class="small"># </span>
+                <span id="profileCount" countTo="<%= application.app_profiles_count %>">
+                    <%= application.config.app_profiles.count %>
+                </span>
+            </h4>
+        </div>
+    </div>
+    <div class="col-lg-3 col-6 text-center">
+        <div class="border border-light border-1 border-radius-md py-3">
+            <h6 class="text-primary text-gradient mb-0">Mod</h6>
+            <h4 class="font-weight-bolder">
+                <span class="small"># </span>
+                <span id="modCount" countTo="0">
+                    <%= application.config.app_mods.count %>
+                </span>
+            </h4>
+        </div>
+    </div>
+    <div class="col-lg-3 col-6 text-center mt-4 mt-lg-0">
+        <div class="border border-light border-1 border-radius-md py-3">
+            <h6 class="text-primary text-gradient mb-0">Music</h6>
+            <h4 class="font-weight-bolder">
+                <span class="small"># </span>
+                <span id="musicCount" countTo="0">
+
+                </span>
+            </h4>
+        </div>
+    </div>
+    <div class="col-lg-3 col-6 text-center mt-4 mt-lg-0">
+        <div class="border border-light border-1 border-radius-md py-3">
+            <h6 class="text-primary text-gradient mb-0">Screenshot</h6>
+            <h4 class="font-weight-bolder">
+                <span class="small"># </span>
+                <span id="screenshotCount" countTo="0">
+
+                </span>
+            </h4>
+        </div>
+    </div>
+</div>

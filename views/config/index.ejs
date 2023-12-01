@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', title) %>
+</head>
+
+
+<body class="bg-gray-200">
+    <div class="container position-sticky z-index-sticky top-0">
+        <div class="row">
+            <div class="col-12">
+                <!-- Navbar -->
+                <%- include('../partials/basic-nav.ejs') %>
+                    <!-- End Navbar -->
+            </div>
+        </div>
+    </div>
+    <main class="main-content  mt-0">
+        <div class="page-header align-items-start min-vh-100"
+            style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
+            <span class="mask bg-gradient-dark opacity-6"></span>
+            <div class="container my-auto">
+                <div class="row">
+                    <div class="col-lg-6 col-md-8 col-12 mx-auto">
+                        <div class="card z-index-0 fadeIn3 fadeInBottom">
+                            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                                <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
+                                    <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Setup</h4>
+
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form method="post" class="text-start">
+                                    <div class="input-group input-group-outline my-3 is-filled">
+                                        <label class="form-label">Euro Truck Simulator 2 - General Path</label>
+                                        <input type="text" name="general_path" class="form-control"
+                                            onfocus="focused(this)" onfocusout="defocused(this)"
+                                            placeholder="General Path" <% if(application.config.app_game_general_url) {
+                                            %>
+                                        value="<%= application.config.app_game_general_url %>" <% } else { %> value=""
+                                                <% } %>
+                                                    />
+                                    </div>
+                                    <div class="input-group input-group-outline my-3 is-filled">
+                                        <label class="form-label">Euro Truck Simulator 2 - Documents Path</label>
+                                        <input type="text" name="document_path" class="form-control"
+                                            onfocus="focused(this)" onfocusout="defocused(this)"
+                                            placeholder="Documents Path" <% if(application.config.app_game_document_url)
+                                            { %>
+                                        value="<%= application.config.app_game_document_url %>" <% } else { %> value=""
+                                                <% } %>
+                                                    />
+
+                                    </div>
+                                    <div class="d-flex jusfity-items-start">
+                                        <button type="reset"
+                                            class="btn bg-gradient-danger w-50 my-4 mb-2">Reset</button>
+                                        <button type="submit"
+                                            class="btn bg-gradient-success w-50 my-4 mb-2">Save</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer position-absolute bottom-2 w-75" style="left: 300px;">
+                <%- include('../partials/foot.ejs') %>
+            </footer>
+        </div>
+    </main>
+    <!--   Core JS Files   -->
+    <script src="/static/js/core/popper.min.js"></script>
+    <script src="/static/js/core/bootstrap.min.js"></script>
+    <script src="/static/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="/static/js/plugins/smooth-scrollbar.min.js"></script>
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+    </script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="/static/js/material-dashboard.min.js"></script>
+</body>
+
+
+</html>
